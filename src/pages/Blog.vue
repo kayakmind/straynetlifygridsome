@@ -1,8 +1,8 @@
 <template>
   <Layout>
     <div v-for="edge in $page.posts.edges" :key="edge.node.title">
-      {{ edge.node.title }}
-      {{ edge.node.excerpt }}
+      <h2>{{ edge.node.title }}</h2>
+      <p>{{ edge.node.excerpt }}</p>
     </div>
   </Layout>
 </template>
@@ -12,7 +12,8 @@ query Posts {
     posts: allPost {
       edges {
         node {       
-          title        
+          title
+          excerpt       
         }
       }
     }
